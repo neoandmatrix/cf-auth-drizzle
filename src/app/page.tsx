@@ -1,7 +1,12 @@
-import Image from "next/image";
+export const runtime = "edge"
 
-export default function Home() {
+import { auth } from "../server/auth";
+
+export default async function Home() {
+  const session = await auth()
   return (
-   <>hello</>
+   <>hello
+   <div>{session?.user?.id}</div>
+   </>
   );
 }

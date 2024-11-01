@@ -3,7 +3,7 @@
 import { db } from "@/server/db/index";
 import { users } from "@/server/db/schema";
 import { eq } from "drizzle-orm";
-import { comparePassword, hashPassword } from "@/lib/utils";
+import { comparePassword, hashPassword } from "../utils/auth";
 import { RegisterSchema, RegisterSchemaType } from "../validation/sign-up";
 import { signIn, signOut } from "@/server/auth";
 import { SigninSchema, SigninType } from "../validation/sign-in";
@@ -84,7 +84,6 @@ export async function login(values: SigninType | RegisterSchemaType) {
 
 export async function register(values: RegisterSchemaType) {
   try {
-    console.log(process.env.DB);
 
     const { email, password } = RegisterSchema.parse(
       values,

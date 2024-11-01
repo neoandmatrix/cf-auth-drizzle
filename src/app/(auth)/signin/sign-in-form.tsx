@@ -15,7 +15,7 @@ import { SigninSchema, SigninType } from "../../../../validation/sign-in";
 import { useState, useTransition } from "react";
 import LoadingButton from "@/components/loading-button";
 import { login } from "../../../../actions/user.actions";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function SignInForm() {
   const router = useRouter();

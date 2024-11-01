@@ -13,7 +13,7 @@ function getLocalD1DB() {
       throw new Error(`.sqlite file not found in ${basePath}`);
     }
 
-    const url = path.resolve(basePath, dbFile);
+    const url = "file:"+path.resolve(basePath, dbFile);
     return url;
   } catch (err) {
     console.log(`Error  ${err}`);
