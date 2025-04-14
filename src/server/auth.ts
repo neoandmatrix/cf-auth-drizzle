@@ -41,6 +41,20 @@ const authConfig: NextAuthConfig = {
       }
       return token;
     },
+
+    // * to restrict user to a particular email domain
+
+    // signIn({ profile }) {
+    //   if (profile?.email?.endsWith('experimental')) {
+    //     return true
+    //   } else {
+    //     return false
+    //   }
+    // }
+    // session({session,user}){
+    //   session.user.role = user.role
+    //   return session
+    // }
   },
 
   jwt: {
